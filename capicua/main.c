@@ -16,8 +16,9 @@
 */
 
 #include <stdio.h>
+#include <stdbool.h>
 
-int es_capicua(int entrada){
+bool es_capicua(int entrada){
     int temp = 0;
     int es = 0;
     int ultima_cifra = 0;
@@ -29,28 +30,30 @@ int es_capicua(int entrada){
         entrada = entrada / 10;
         nuevo_numero = (nuevo_numero * 10) + ultima_cifra;
     }
-    es = (temp == nuevo_numero);
-    return es; 
+    return (temp == nuevo_numero);
 }
 
-int pedir_numero(){
-    int entrada = 0;
+int pedir_numero(int *entrada){
     printf("Ingresá un numero: ");
-    scanf("%d", &entrada);
     printf("\n");
-    return entrada;
+    return scanf("%d", entrada);
+}
+
+void mostrar(bool cond){
+    if (cond)
+        printf("es capicua \n");
+    else
+        printf("no es capicua \n");
 }
 
 int main()
 {
+    int entrada;
     int continuar = 0;
     do{
-        int entrada = pedir_numero();
+        pedir_numero(&entrada);
         continuar = entrada;
-        if (es_capicua(entrada))
-            printf("es capicua \n");
-        else
-            printf("no es capicua \n");
+        mostrar(es_capicua(entrada));
             
     } while (continuar != 0);
     
