@@ -17,25 +17,28 @@
 
 #include <stdio.h>
 
-int main() {
-    printf("======= PROGRAMA DETECTOR DE NUMERO CAPICUA ( PALINDROM ) ========\n\n");
-    int entrada = 0;
-    int ultima_cifra = 0;
-    int nuevo_numero = 0;
+int main()
+{
     int temp = 0;
-    printf("Ingresá un numero: ");
-    scanf("%d", &entrada);
-    printf("\n");
-    temp = entrada;
-    while (entrada != 0) {
-        ultima_cifra = entrada % 10;
-        entrada = entrada / 10;
-        nuevo_numero = (nuevo_numero * 10) + ultima_cifra;
-        printf("Armando el nuevo numero : %d\n", nuevo_numero);
-    }
-    if (temp == nuevo_numero)
-        printf("%d es capicua ", temp);
-    else
-        printf("%d no es capicua", temp);
+    do{
+        int ultima_cifra = 0;
+        int nuevo_numero = 0;
+        int entrada = 0;
+        printf("Ingresá un numero: ");
+        scanf("%d", &entrada);
+        printf("\n");
+        temp = entrada;
+        while (entrada != 0) {
+            ultima_cifra = entrada % 10;
+            entrada = entrada / 10;
+            nuevo_numero = (nuevo_numero * 10) + ultima_cifra;
+        }
+        if (temp == nuevo_numero)
+            printf("%d es capicua \n", temp);
+        else
+            printf("%d no es capicua \n", temp);
+            
+    } while (temp != 0);
+    
     return 0;
 }
