@@ -17,28 +17,43 @@
 
 #include <stdio.h>
 
+int es_capicua(int entrada){
+    int temp = 0;
+    int es = 0;
+    int ultima_cifra = 0;
+    int nuevo_numero = 0;
+    temp = entrada;
+    
+    while (entrada != 0) {
+        ultima_cifra = entrada % 10;
+        entrada = entrada / 10;
+        nuevo_numero = (nuevo_numero * 10) + ultima_cifra;
+    }
+    es = (temp == nuevo_numero);
+    return es; 
+}
+
+int pedir_numero(){
+    int entrada = 0;
+    printf("Ingresá un numero: ");
+    scanf("%d", &entrada);
+    printf("\n");
+    return entrada;
+}
+
 int main()
 {
-    int temp = 0;
+    int continuar = 0;
     do{
-        int ultima_cifra = 0;
-        int nuevo_numero = 0;
-        int entrada = 0;
-        printf("Ingresá un numero: ");
-        scanf("%d", &entrada);
-        printf("\n");
-        temp = entrada;
-        while (entrada != 0) {
-            ultima_cifra = entrada % 10;
-            entrada = entrada / 10;
-            nuevo_numero = (nuevo_numero * 10) + ultima_cifra;
-        }
-        if (temp == nuevo_numero)
-            printf("%d es capicua \n", temp);
+        int entrada = pedir_numero();
+        continuar = entrada;
+        if (es_capicua(entrada))
+            printf("es capicua \n");
         else
-            printf("%d no es capicua \n", temp);
+            printf("no es capicua \n");
             
-    } while (temp != 0);
+    } while (continuar != 0);
     
     return 0;
 }
+
