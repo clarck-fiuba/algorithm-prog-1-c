@@ -18,6 +18,35 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+
+void sucecion_geometrica(int numero){
+	
+	int i, suce_geo=1;
+	
+	for (i=0; i<=numero; i++){
+		printf("%d\n", suce_geo);
+		suce_geo=suce_geo*3;
+	}
+	
+}
+
+
+void mi_funcion(int num, int *canti, int* producto){
+    int entrada = num;
+    int ultim = 0;
+    
+    while(entrada != 0){
+        ultim = entrada % 10;
+        entrada = entrada / 10;
+        if (ultim % 2 == 0){
+            (* producto) *= ultim;
+            (* canti)++;
+        }
+    }
+
+
+}
+
 bool es_capicua(int entrada){
     int temp = 0;
     int es = 0;
@@ -48,14 +77,28 @@ void mostrar(bool cond){
 
 int main()
 {
-    int entrada;
-    int continuar = 0;
-    do{
-        pedir_numero(&entrada);
-        continuar = entrada;
-        mostrar(es_capicua(entrada));
-            
-    } while (continuar != 0);
+    // int entrada;
+    // int continuar = 0;
+    // int canti = 0;
+    // int producto = 1;
+
+    // while (entrada != 0){
+    //     pedir_numero(&entrada);
+    //     // mostrar(es_capicua(entrada));
+    //     mi_funcion(entrada, &canti, &producto);
+    // };
+
+    // pedir_numero(&entrada);
+    // mi_funcion(entrada, &canti, &producto);
+    // printf("%d\n", producto);
+    // printf("%d\n", canti);
+    int i;
+    for (i = 0; i < 10; i++)
+    {
+       printf("%d\n",i);
+    }
+    
+    printf("i: %d\n", i);
     
     return 0;
 }

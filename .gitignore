@@ -1,0 +1,7 @@
+*.exe
+*.exec
+.vscode
+.idea
+*.o
+*.pdf
+.DS_Store
