@@ -5,3 +5,4 @@
 *.o
 *.pdf
 .DS_Store
+temp*
