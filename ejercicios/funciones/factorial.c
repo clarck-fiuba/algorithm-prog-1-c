@@ -1,6 +1,6 @@
 /**
  * @file factorial.c
- * @author your name (you@domain.com)
+ * @author Clarck M. (cmonclair@fi.uba.ar)
  * @brief 
  * @version 0.1
  * @date 2022-05-07

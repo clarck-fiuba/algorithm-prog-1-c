@@ -1,12 +1,20 @@
 /**
- * @file e1.c
- * @author your name (you@domain.com)
+ * @file cantidad_de_dia_del_mes.c
+ * @author Clarck M. (cmonclair@fi.uba.ar)
  * @brief 
  * @version 0.1
- * @date 2022-05-07
+ * @date 2022-05-08
  * 
  * @copyright Copyright (c) 2022
  * 
+ */
+
+/**
+ * @brief 
+ * mes de 30 dias: 4,6,9,11
+ * mes de feb: 
+ *  normal: 28
+ *  bisiesto: 29
  */
 
 #include <stdio.h>
@@ -14,13 +22,6 @@
 
 
 int main(){
-    /**
-     * @brief 
-     * mes de 30 dias: 4,6,9,11
-     * mes de feb: 
-     *  normal: 28
-     *  bisiesto: 29
-     */
     int cantidad=31;
     int mes=1, anio=1;
     printf("Ingresa un mes:\n");
