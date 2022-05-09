@@ -10,6 +10,7 @@
  */
 
 /**
+ * @brief
  Dado un número n, informar los n primeros términos de la sucesión
  geométrica de razón 3 (1, 3, 9, 27, etc.).
  */
@@ -17,28 +18,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int sn(int n, int razon);
+
+void displaySnR3(int numero);
 
 int main()
 {
-    int n = 5;
-    int r = 3;
-    printf("La suma de los %d terminos de un Sn de razon %d es %d\n\n", n, r, sn(n, r));
+    int n = 4; 
+    displaySnR3(n);
     return 0;
 }
 
-int sn(int n, int razon)
-{
-    int suma = 0;
-    int a = 1, r = razon, i;
-    for (i = 0; i < n; i++)
-    {
-        if (i == 0)
-            suma = a;
-        else
-            suma = suma + (a * r);
-        if (i >= 1)
-            r = r * r;
-    }
-    return suma;
+
+void displaySnR3(int numero){
+	
+	int i, suce_geo=1, suma=0;
+
+    printf("{");
+	for (i=0; i<numero; i++){
+		printf(" %d,", suce_geo);
+        suma = suma + suce_geo;
+		suce_geo=suce_geo * 3;
+	}
+    printf(" }\n");
+    printf("La sum es: %d\n\n",suma);
 }

@@ -3,6 +3,8 @@
 #define MAX 7
 
 int esPrimo(int num);
+void mi_funcion(int num, int *canti, int* producto);
+
 int main(){
     int num = 77;
     if(esPrimo(num)==1)
@@ -20,4 +22,21 @@ int esPrimo(int num){
             es = 0;
     }
     return es;
+}
+
+
+void mi_funcion(int num, int *canti, int* producto){
+    int entrada = num;
+    int ultim = 0;
+    
+    while(entrada != 0){
+        ultim = entrada % 10;
+        entrada = entrada / 10;
+        if (ultim % 2 == 0){
+            (* producto) *= ultim;
+            (* canti)++;
+        }
+    }
+
+
 }
