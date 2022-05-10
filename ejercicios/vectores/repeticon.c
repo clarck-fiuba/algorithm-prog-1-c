@@ -32,26 +32,23 @@ typedef int matrix_t[25][25];
 
 void ejercicio_3(matrix_t matrix, int mf, int mc)
 {
-    int i, j, el, ma = 0;
-    int aux[100][2] = {{0}};
+    int i, j, el;
+    int aux[101] = {0};
     
     for (i = 0; i < mf; i++)
     {
         for (j = 0; j < mc; j++)
         {
             el = matrix[i][j];
-            aux[el][1] = 1;
-            if (aux[el][0] == el) 
-                aux[el][1] = aux[el][1] + 1;  
-            aux[el][0] = el;
-            ma++;
+            if (aux[el] >= 0) 
+                aux[el] = aux[el] + 1;   
         }
     }
 
-    for (i = 0; i < 100; i++)
+    for (i = 0; i < 101; i++)
     {
-        if (aux[i][0] > 0)
-            printf(" %d => %d \n", i, aux[i][1]);
+        if (aux[i] > 0)
+            printf(" %d => %d \n", i, aux[i]);
     }
 }
 
@@ -68,7 +65,7 @@ int main()
     printf("CASO 2 -------------------------\n\n");
     ejercicio_3(matriz2, 10, 5);
 
-    printf("CASO 3 -------------------------\n\n");
-    ejercicio_3(matriz3, 20, 6);
+    // printf("CASO 3 -------------------------\n\n");
+    // ejercicio_3(matriz3, 20, 6);
     return 0;
 }
