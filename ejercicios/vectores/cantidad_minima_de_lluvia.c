@@ -1,20 +1,22 @@
 /**
  * @file cantidad_minima_de_lluvia.c
  * @author Clarck M. (cmonclair@fi.uba.ar)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2022-05-10
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 /**
- * @brief 
-Utilizando las declaraciones dadas debajo, implementar la función ejercicio_3 que reciba una matriz cargada con números enteros,
+ * @brief
+Utilizando las declaraciones dadas debajo, implementar la función ejercicio_3 que reciba
+una matriz cargada con números enteros,
 que representan las cantidades de mililitros de lluvia por hora de cada dia del mes de enero.
 
-La función debe mostrar por pantalla el numero de dia y la cantidad minima de mililitros de lluvia, por cada dia del mes .
+La función debe mostrar por pantalla el numero de dia y la cantidad minima de mililitros de lluvia,
+por cada dia del mes .
 
 Considerar que solo se puede recorrer una vez la matriz.
 
@@ -40,6 +42,54 @@ typedef int matrix_t[DIAS][HORAS];
 
 void ejercicio_3(matrix_t matrix)
 {
+    int dia, hora, min, ml, total_lluvia_en_el_dia;
+    for (dia = 0; dia < DIAS; dia++)
+    {
+        printf("Dia %d ", dia + 1);
+        min = matrix[dia][0];
+        for (hora = 0; hora < HORAS; hora++)
+        {
+            ml = matrix[dia][hora];
+            printf("%d ", ml);
+            total_lluvia_en_el_dia += ml; 
+            if (min > ml)
+                min = ml;
+        }
+        printf("-> %d\n", min);
+    }
+}
+
+void ejercicio_32(matrix_t matrix)
+{
+
+    int vector[DIAS];
+    int suma_militros_por_dia = 0;
+    float promedio = 0.000;
+    size_t i = 0, z = 0, j = 0, k = 0;
+    for (i = 0; i < DIAS; i++)
+    {
+        vector[i] = 0;
+    }
+
+    for (z = 0; z < DIAS; z++)
+    {
+        for (j = 0; j < HORAS; j++)
+        {
+            vector[z] += matrix[z][j]; // la suma de mililitros por dia
+        }
+        suma_militros_por_dia += vector[z];
+        // printf("-------------------");
+        // printf("militros por dia %d en el dia %ld \n",vector[z],z);
+    }
+
+    promedio = suma_militros_por_dia / 30.000000;
+    for (k = 0; k < DIAS; k++)
+    {
+        if (vector[k] > promedio)
+        {
+            printf("La suma de militros en el dia %ld es igual a %d \n", k, vector[k]);
+        }
+    }
 }
 
 int main()

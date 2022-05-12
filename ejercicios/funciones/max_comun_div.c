@@ -22,7 +22,7 @@ int max_comun_div(int numA, int numB)
         resto = numA % numB;
         if (resto == 0)
             max_div = numB;
-        numA = numB;
+        numA = numB;  
         numB = resto;
     }
     return max_div;
