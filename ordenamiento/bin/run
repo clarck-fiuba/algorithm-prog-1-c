@@ -1,0 +1,5 @@
+#!/bin/bash
+
+CFILE=$1
+
+gcc "../$CFILE.c" -o main && time ./main
